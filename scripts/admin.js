@@ -1,8 +1,8 @@
 var app = angular.module('app', ['euTree.directive']);
 
-var controller = treeApp.controller('controller', function($scope, $http) {
+var controller = app.controller('controller', function($scope, $http) {
     $scope.list = [];
-    $http.get('/tree').then(function(response) {
+    $http.get('/api/drive/tree').then(function(response) {
         $scope.list = [response.data];
     });
     $scope.$watch('selectedPath', function() {
